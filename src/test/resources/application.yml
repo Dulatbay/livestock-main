@@ -4,6 +4,12 @@ keycloak:
   client-id: test-client
 
 spring:
+  flyway:
+    enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
   security:
     oauth2:
       resourceserver:

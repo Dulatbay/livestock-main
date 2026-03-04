@@ -63,8 +63,8 @@ public class NewsService {
 
         String imageUrl = entity.getImageUrl();
         if (request.image() != null && !request.image().isEmpty()) {
-            fileManagerService.delete(imageUrl);
-            imageUrl = fileManagerService.store(request.image());
+            deleteImage(imageUrl);
+            imageUrl = storeImage(request.image());
         }
 
         entity.update(
@@ -84,11 +84,19 @@ public class NewsService {
         newsRepository.save(entity);
     }
 
+    private static final String FILES_PATH_PREFIX = "/files/";
+
     private String storeImage(MultipartFile image) {
         if (image == null || image.isEmpty()) {
             return null;
         }
-        return fileManagerService.store(image);
+        return FILES_PATH_PREFIX + fileManagerService.store(image);
+    }
+
+    private void deleteImage(String imageUrl) {
+        if (imageUrl != null && imageUrl.startsWith(FILES_PATH_PREFIX)) {
+            fileManagerService.delete(imageUrl.substring(FILES_PATH_PREFIX.length()));
+        }
     }
 
     private String getCurrentKeycloakId() {
