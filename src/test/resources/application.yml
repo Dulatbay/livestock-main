@@ -1,0 +1,16 @@
+keycloak:
+  url: http://localhost:8080
+  realm: test-realm
+  client-id: test-client
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/test-realm
+          jwk-set-uri: http://localhost:8080/realms/test-realm/protocol/openid-connect/certs
+
+file:
+  storage:
+    upload-dir: ${java.io.tmpdir}/livestock-test-uploads

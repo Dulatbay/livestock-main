@@ -1,0 +1,63 @@
+{
+  "properties": [
+    {
+      "name": "spring.application.client-id",
+      "type": "java.lang.String",
+      "description": "Description for spring.application.client-id."
+    },
+    {
+      "name": "spring.application.client-secret",
+      "type": "java.lang.String",
+      "description": "Description for spring.application.client-secret."
+    },
+    {
+      "name": "spring.application.username",
+      "type": "java.lang.String",
+      "description": "Description for spring.application.username."
+    },
+    {
+      "name": "spring.application.password",
+      "type": "java.lang.String",
+      "description": "Description for spring.application.password."
+    },
+    {
+      "name": "spring.application.send-email",
+      "type": "java.lang.String",
+      "description": "Description for spring.application.send-email."
+    },
+    {
+      "name": "spring.application.file-api.name",
+      "type": "java.lang.String",
+      "description": "Description for spring.application.file-api.name."
+    },
+    {
+      "name": "spring.application.file-api.url",
+      "type": "java.lang.String",
+      "description": "Description for spring.application.file-api.url."
+    },
+    {
+      "name": "spring.security.oauth2.resourceserver.jwt.jwk-set-uri",
+      "type": "java.lang.String",
+      "description": "Description for spring.security.oauth2.resourceserver.jwt.jwk-set-uri."
+    },
+    {
+      "name": "keycloak.url",
+      "type": "java.lang.String",
+      "description": "Description for keycloak.url."
+    },
+    {
+      "name": "keycloak.realm",
+      "type": "java.lang.String",
+      "description": "Description for keycloak.realm."
+    },
+    {
+      "name": "keycloak.client-id",
+      "type": "java.lang.String",
+      "description": "Description for keycloak.client-id."
+    },
+    {
+      "name": "keycloak.resourceRealmModule",
+      "type": "java.lang.String",
+      "description": "Description for keycloak.resourceRealmModule."
+    }
+  ] }

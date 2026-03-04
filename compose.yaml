@@ -1,0 +1,21 @@
+services:
+  postgres:
+    container_name: livestock-postgres
+    image: postgres:18
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB_NAME}
+    ports:
+      - "5434:5432"
+    volumes:
+      - pg18_livestock:/var/lib/postgresql   # 18+ expects this mount point
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d livestock"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  pg18_livestock:
